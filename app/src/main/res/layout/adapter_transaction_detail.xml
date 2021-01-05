@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/purple_500"
+    app:cardCornerRadius="10dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <com.infinityandroid.roundedimageview.RoundedImageView
+            android:id="@+id/img_transaction_detail"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/img_no_image"
+            app:corner_radius="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_cateogry_detail_transaction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Makanan"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_transaction_detail"
+            app:layout_constraintTop_toTopOf="@id/img_transaction_detail" />
+
+        <TextView
+            android:id="@+id/tv_name_product_transaction_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Le Minerale"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/img_transaction_detail"
+            app:layout_constraintTop_toBottomOf="@id/tv_cateogry_detail_transaction" />
+
+        <TextView
+            android:id="@+id/tv_price_transaction_detail"
+            android:layout_width="0dp"
+            app:layout_constraintStart_toEndOf="@id/img_transaction_detail"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_name_product_transaction_detail"
+            android:textColor="@color/white"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:text="Rp 45.000 x4" />
+
+        <TextView
+            android:id="@+id/tv_total_transaction_detail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/tv_price_transaction_detail"
+            app:layout_constraintStart_toEndOf="@id/img_transaction_detail"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:text="Rp 180.000" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

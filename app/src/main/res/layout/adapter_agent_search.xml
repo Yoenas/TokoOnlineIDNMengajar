@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cv_agent_search"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardBackgroundColor="@color/purple_500"
+    app:cardCornerRadius="10dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
+        <com.infinityandroid.roundedimageview.RoundedImageView
+            android:id="@+id/img_agent_search"
+            android:layout_width="75dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:adjustViewBounds="true"
+            android:src="@drawable/img_no_image"
+            app:corner_radius="10" />
+
+        <TextView
+            android:id="@+id/tv_name_store_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/img_agent_search"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            tools:text="Nama Toko" />
+
+        <TextView
+            android:id="@+id/tv_location_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_name_store_search"
+            android:layout_marginTop="3dp"
+            android:layout_toEndOf="@+id/img_agent_search"
+            android:drawableLeft="@drawable/ic_location"
+            android:drawableTint="@color/white"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            tools:text="Lokasi" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

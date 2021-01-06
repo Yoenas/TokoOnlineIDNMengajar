@@ -1,7 +1,7 @@
 package com.yoenas.tokoonline.ui.transaction
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.yoenas.tokoonline.R
 
 class TransactionActivity : AppCompatActivity() {
@@ -15,14 +15,14 @@ class TransactionActivity : AppCompatActivity() {
 
     private fun initActivity() {
         supportFragmentManager.beginTransaction()
-            .add(R.id.container, TransactionFragment(), "trans_fragment")
+            .add(R.id.container_transaction, TransactionFragment(), "trans_fragment")
             .commit()
     }
 
     override fun onSupportNavigateUp(): Boolean {
         if (supportFragmentManager.findFragmentByTag("trans_fragment") == null )
             supportFragmentManager.beginTransaction()
-                .replace(R.id.container, TransactionFragment(), "trans_fragment")
+                .replace(R.id.container_transaction, TransactionFragment(), "trans_fragment")
                 .commit()
         else
             finish()

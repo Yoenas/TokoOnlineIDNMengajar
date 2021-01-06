@@ -7,7 +7,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiService {
 
-    var BASE_URL: String = "change_this_with_your_api/localhost"
+    var BASE_URL: String = "https://penjualanapp.warungbelajar.com/api/"
     val endpoint: ApiEndPoint
         get() {
             val interceptor = HttpLoggingInterceptor()

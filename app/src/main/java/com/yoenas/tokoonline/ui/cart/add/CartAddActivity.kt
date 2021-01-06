@@ -1,11 +1,11 @@
 package com.yoenas.tokoonline.ui.cart.add
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.yoenas.tokoonline.R
 import com.yoenas.tokoonline.data.Constant
 import com.yoenas.tokoonline.data.database.PrefsManager
@@ -29,37 +29,30 @@ class CartAddActivity : AppCompatActivity(), CartAddContract.View {
 
         prefsManager = PrefsManager(this)
         cartAddPresenter = CartAddPresenter(this)
-
-        edtAddProduct = findViewById(R.id.edt_add_product)
-        tvQuantity = findViewById(R.id.tv_quantity)
-        npQuantity = findViewById(R.id.np_quantity)
-        btnSubmit = findViewById(R.id.btn_submit_add_cart)
-        progressBar = findViewById(R.id.progress_cart)
     }
 
     override fun onStart() {
         super.onStart()
         if (Constant.IS_CHANGE) {
-            Constant.IS_CHANGE = true
+            Constant.IS_CHANGE = false
             edtAddProduct.setText(Constant.PRODUCT_NAME)
             tvQuantity.visibility = View.VISIBLE
             npQuantity.visibility = View.VISIBLE
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Constant.PRODUCT_ID = 0
-        Constant.PRODUCT_NAME = ""
-        Constant.PRODUCT_QTY = 0
-    }
-
     override fun initActivity() {
         supportActionBar!!.title = "Tambah Produk"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        tvQuantity.visibility = View.GONE
-        npQuantity.visibility = View.GONE
+        edtAddProduct = findViewById(R.id.edt_add_product)
+        tvQuantity = findViewById(R.id.tv_quantity)
+        npQuantity = findViewById(R.id.np_quantity)
+        btnSubmit = findViewById(R.id.btn_submit_add_cart)
+        progressBar = findViewById(R.id.progress_cart)
+
+        tvQuantity.visibility = View.INVISIBLE
+        npQuantity.visibility = View.INVISIBLE
     }
 
     override fun initListener() {
@@ -115,5 +108,12 @@ class CartAddActivity : AppCompatActivity(), CartAddContract.View {
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return super.onSupportNavigateUp()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Constant.PRODUCT_ID = 0
+        Constant.PRODUCT_NAME = ""
+        Constant.PRODUCT_QTY = 0
     }
 }

@@ -2,10 +2,10 @@ package com.yoenas.tokoonline.ui.agent.create
 
 import com.yoenas.tokoonline.data.model.agent.ResponseAgentUpdate
 import com.yoenas.tokoonline.network.ApiService
-import okhttp3.MediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody
+import okhttp3.RequestBody.Companion.asRequestBody
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -15,7 +15,7 @@ class AgentCreatePresenter(val view: AgentCreateContract.View): AgentCreateContr
 
     init {
         view.initActivity()
-        view.initActivity()
+        view.initListener()
         view.onLoading(false)
     }
 
@@ -28,9 +28,11 @@ class AgentCreatePresenter(val view: AgentCreateContract.View): AgentCreateContr
         gambar_toko: File
     ) {
 
-        val requestBody: RequestBody = RequestBody.create("image/*".toMediaTypeOrNull(), gambar_toko)
-        val multipartBody: MultipartBody.Part = MultipartBody.Part.createFormData("gambar_toko",
-            gambar_toko.name, requestBody)
+        val requestBody: RequestBody = gambar_toko.asRequestBody("image/*".toMediaTypeOrNull())
+        val multipartBody: MultipartBody.Part = MultipartBody.Part.createFormData(
+            "gambar_toko",
+            gambar_toko.name, requestBody
+        )
 
         view.onLoading(true)
         ApiService.endpoint.insertAgent(nama_toko, nama_pemilik, alamat, latitude, longitude, multipartBody)

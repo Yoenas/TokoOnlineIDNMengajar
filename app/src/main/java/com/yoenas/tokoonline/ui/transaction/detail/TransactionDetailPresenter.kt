@@ -6,11 +6,8 @@ import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
 
-class TransactionDetailPresenter(val view: TransactionDetailConract.View): TransactionDetailConract.Presenter {
-
-    init {
-        view.initFragment()
-    }
+class TransactionDetailPresenter(val view: TransactionDetailContract.View) :
+    TransactionDetailContract.Presenter {
 
     override fun getTransactionByInvoice(invoice: String) {
         view.onLoadingDetail(true)

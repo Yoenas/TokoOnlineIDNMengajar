@@ -18,12 +18,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.TokoOnline">
-        <activity android:name=".ui.agent.search.AgentSearchActivity"/>
-        <activity android:name=".ui.product.ProductActivity" />
-        <activity android:name=".ui.cart.add.CartAddActivity" />
-        <activity android:name=".ui.cart.CartActivity" />
-        <activity android:name=".ui.transaction.TransactionActivity" />
-        <activity android:name=".ui.agent.update.AgentUpdateActivity" />
+        <activity
+            android:name=".ui.agent.search.AgentSearchActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.product.ProductActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cart.add.CartAddActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.cart.CartActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.transaction.TransactionActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.agent.update.AgentUpdateActivity"
+            android:screenOrientation="portrait" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -38,16 +50,25 @@
 
         <activity
             android:name=".ui.agent.AgentMapsActivity"
-            android:label="@string/title_activity_agent_maps" />
-        <activity android:name=".ui.agent.create.AgentCreateActivity" />
+            android:label="@string/title_activity_agent_maps"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.agent.create.AgentCreateActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ui.agent.AgentActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.user.UserActivity"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".ui.login.LoginActivity" />
-        <activity android:name=".ui.home.MainActivity">
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.home.MainActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

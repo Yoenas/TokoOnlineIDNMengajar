@@ -1,12 +1,12 @@
 package com.yoenas.tokoonline.ui.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.yoenas.tokoonline.R
 import com.yoenas.tokoonline.data.database.PrefsManager
 import com.yoenas.tokoonline.data.model.login.ResponseLogin
@@ -25,12 +25,6 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        progressBar = findViewById(R.id.progress_login)
-        btnLogin = findViewById(R.id.btn_login)
-        edtUsername = findViewById(R.id.edt_username)
-        edtPassword = findViewById(R.id.edt_password)
-
-        onLoading(false)
         presenter = LoginPresenter(this)
         prefsManager = PrefsManager(this)
     }
@@ -38,6 +32,13 @@ class LoginActivity : AppCompatActivity(), LoginContract.View {
     override fun initActivity() {
         supportActionBar?.title = "MASUK"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        progressBar = findViewById(R.id.progress_login)
+        btnLogin = findViewById(R.id.btn_login)
+        edtUsername = findViewById(R.id.edt_username)
+        edtPassword = findViewById(R.id.edt_password)
+
+        onLoading(false)
     }
 
     override fun initListener() {

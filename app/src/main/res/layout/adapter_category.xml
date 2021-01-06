@@ -20,7 +20,7 @@
         android:id="@+id/tv_category"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imvImage"
+        android:layout_below="@+id/img_category"
         android:gravity="center"
         android:padding="5dp"
         android:textColor="@color/black"

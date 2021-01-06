@@ -35,10 +35,6 @@ class TransactionFragment : Fragment(), TransactionContract.View {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_transaction, container, false)
-        swipeTransaction = view.findViewById(R.id.swipe_transaction)
-        rvTransaction = view.findViewById(R.id.rv_transaction)
-        fabTransaction = view.findViewById(R.id.fab_transaction)
-
         prefsManager = PrefsManager(context!!)
         presenter = TransactionPresenter(this)
         initListener(view)
@@ -51,14 +47,14 @@ class TransactionFragment : Fragment(), TransactionContract.View {
         presenter.getTransactionByUsername(prefsManager.prefsUsername)
     }
 
-    override fun initFragment() {
+    override fun initListener(view: View) {
+        swipeTransaction = view.findViewById(R.id.swipe_transaction)
+        rvTransaction = view.findViewById(R.id.rv_transaction)
+        fabTransaction = view.findViewById(R.id.fab_transaction)
         transactionAdapter =
-            TransactionAdapter(context!!, arrayListOf()) { dataTransaction, position ->
+            TransactionAdapter(context!!, arrayListOf()) { dataTransaction ->
                 onClickTransaction(dataTransaction.no_faktur!!)
             }
-    }
-
-    override fun initListener(view: View) {
         rvTransaction.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = transactionAdapter

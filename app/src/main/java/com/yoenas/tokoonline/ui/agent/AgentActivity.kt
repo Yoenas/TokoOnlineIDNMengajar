@@ -1,12 +1,12 @@
 package com.yoenas.tokoonline.ui.agent
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -46,16 +46,10 @@ class AgentActivity : AppCompatActivity(), AgentContract.View, OnMapReadyCallbac
         setContentView(R.layout.activity_agent)
 
         presenter = AgentPresenter(this)
-
-        toolbarAgent = findViewById(R.id.toolbar_agent)
-        setSupportActionBar(toolbarAgent)
-
-        fab = findViewById(R.id.fab_agent)
-        rvAgent = findViewById(R.id.rv_agent)
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onResume() {
+        super.onResume()
         presenter.getAgent()
     }
 
@@ -65,8 +59,13 @@ class AgentActivity : AppCompatActivity(), AgentContract.View, OnMapReadyCallbac
     }
 
     override fun initActivity() {
-        supportActionBar!!.title = "Agen"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+        supportActionBar?.title = "Agen"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        toolbarAgent = findViewById(R.id.toolbar_agent)
+        setSupportActionBar(toolbarAgent)
+        fab = findViewById(R.id.fab_agent)
+        rvAgent = findViewById(R.id.rv_agent)
+        swipeLayoutAgent = findViewById(R.id.swipe_agent)
 
         MapsHelper.permissionMap(this, this)
     }

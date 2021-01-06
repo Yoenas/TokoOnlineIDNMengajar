@@ -1,10 +1,10 @@
 package com.yoenas.tokoonline.ui.product
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -31,27 +31,26 @@ class ProductActivity : AppCompatActivity(), ProductContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product)
 
-        imgCloseProduct = findViewById(R.id.img_close_product)
-        swipeProduct = findViewById(R.id.swipe_product)
-        tvCategoryProduct = findViewById(R.id.tv_category_product)
-        rvCategory = findViewById(R.id.rv_category)
-        rvProduct = findViewById(R.id.rv_product)
-
-        productAdapter = ProductAdapter(this, arrayListOf()){
-            dataProduct: DataProduct, position: Int ->
-        }
-
         presenter = ProductPresenter(this)
         presenter.getCategory()
     }
 
     override fun initActivity() {
         supportActionBar?.hide()
-        categoryAdapter = CategoryAdapter(this, arrayListOf()){
-                dataCategory: DataCategory, position: Int ->
-            kdKateogri = dataCategory.kd_kategori!!
-            presenter.getProduct( dataCategory.kd_kategori )
-        }
+
+        imgCloseProduct = findViewById(R.id.img_close_product)
+        swipeProduct = findViewById(R.id.swipe_product)
+        tvCategoryProduct = findViewById(R.id.tv_category_product)
+        rvCategory = findViewById(R.id.rv_category)
+        rvProduct = findViewById(R.id.rv_product)
+
+        productAdapter = ProductAdapter(this, arrayListOf())
+
+        categoryAdapter =
+            CategoryAdapter(this, arrayListOf()) { dataCategory: DataCategory, position: Int ->
+                kdKateogri = dataCategory.kd_kategori!!
+                presenter.getProduct( dataCategory.kd_kategori )
+            }
     }
 
     override fun initListener() {

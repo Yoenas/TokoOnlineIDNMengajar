@@ -1,14 +1,13 @@
 package com.yoenas.tokoonline.ui.cart
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -42,6 +41,20 @@ class CartActivity : AppCompatActivity(), CartContract.View, View.OnClickListene
         prefsManager = PrefsManager(this)
         cartPresenter = CartPresenter(this)
         cartPresenter.getCart(prefsManager.prefsUsername)
+    }
+
+    override fun onStart() {
+        super.onStart()
+        if (Constant.IS_CHANGE) {
+            Constant.IS_CHANGE = false
+            cartPresenter.getCart(prefsManager.prefsUsername)
+            edtAgent.setText(Constant.AGENT_NAME)
+        }
+    }
+
+    override fun initActivity() {
+        supportActionBar?.title = "Keranjang"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         btnReset = findViewById(R.id.btn_reset)
         btnAdd = findViewById(R.id.btn_add_cart)
@@ -49,29 +62,10 @@ class CartActivity : AppCompatActivity(), CartContract.View, View.OnClickListene
         edtAgent = findViewById(R.id.edt_agent_cart)
         rvCart = findViewById(R.id.rv_cart)
         swipeCart = findViewById(R.id.swipe_cart)
-    }
 
-    override fun initActivity() {
-        supportActionBar!!.title = "Keranjang"
-        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
-
-        cartAdapter = CartAdapter(this, arrayListOf()){ dataCart: DataCart, position: Int ->
+        cartAdapter = CartAdapter(this, arrayListOf()) { dataCart: DataCart, position: Int ->
             cartPresenter.deleteItemCart(dataCart.kd_keranjang!!)
         }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        if (Constant.IS_CHANGE) {
-            Constant.IS_CHANGE = false
-            cartPresenter.getCart( prefsManager.prefsUsername )
-            edtAgent.setText( Constant.AGENT_NAME )
-        }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Constant.AGENT_NAME = ""
     }
 
     override fun initListener() {
@@ -173,5 +167,15 @@ class CartActivity : AppCompatActivity(), CartContract.View, View.OnClickListene
 
     override fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return super.onSupportNavigateUp()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Constant.AGENT_NAME = ""
     }
 }

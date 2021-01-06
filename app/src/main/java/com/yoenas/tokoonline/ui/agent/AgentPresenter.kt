@@ -11,7 +11,8 @@ import retrofit2.Response
 class AgentPresenter(var view: AgentContract.View?): AgentContract.Presenter {
 
     init {
-        view!!.initActivity()
+        view?.initActivity()
+        view?.initListener()
     }
 
     override fun getAgent() {

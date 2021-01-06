@@ -10,6 +10,7 @@ class CartAddPresenter(val view : CartAddContract.View): CartAddContract.Present
 
     init {
         view.initActivity()
+        view.initListener()
         view.onLoading(false)
     }
     

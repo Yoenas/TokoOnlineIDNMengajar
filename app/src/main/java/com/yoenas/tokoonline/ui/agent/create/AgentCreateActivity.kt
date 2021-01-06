@@ -3,10 +3,10 @@ package com.yoenas.tokoonline.ui.agent.create
 import android.app.Activity
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 import com.lazday.poslaravel.util.GalleryHelper
 import com.yoenas.tokoonline.R
 import com.yoenas.tokoonline.data.Constant
@@ -33,14 +33,6 @@ class AgentCreateActivity : AppCompatActivity(), AgentCreateContract.View {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_agent_create)
 
-        edtLocation = findViewById(R.id.edt_location_agent)
-        imgImageAgent = findViewById(R.id.img_image_agent)
-        progressBar = findViewById(R.id.progress_agent)
-        btnSubmit = findViewById(R.id.btn_submit_create_agent)
-        edtNameStore = findViewById(R.id.edt_namestore_agent)
-        edtNameOwner = findViewById(R.id.edt_name_owner_agent)
-        edtAddress = findViewById(R.id.edt_address_agent)
-
         presenter = AgentCreatePresenter(this)
     }
 
@@ -51,16 +43,17 @@ class AgentCreateActivity : AppCompatActivity(), AgentCreateContract.View {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-        Constant.LATITUDE = ""
-        Constant.LONGITUDE = ""
-    }
-
     override fun initActivity() {
         supportActionBar?.title = "Agen Baru"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+        edtLocation = findViewById(R.id.edt_location_agent)
+        imgImageAgent = findViewById(R.id.img_image_agent)
+        progressBar = findViewById(R.id.progress_agent)
+        btnSubmit = findViewById(R.id.btn_submit_create_agent)
+        edtNameStore = findViewById(R.id.edt_namestore_agent)
+        edtNameOwner = findViewById(R.id.edt_name_owner_agent)
+        edtAddress = findViewById(R.id.edt_address_agent)
     }
 
     override fun initListener() {
@@ -82,9 +75,15 @@ class AgentCreateActivity : AppCompatActivity(), AgentCreateContract.View {
                 showMessage( "Lengkapi data dengan benar" )
             } else {
                 presenter.insertAgent(
-                    nameStore.toString(), nameOwner.toString(), address.toString(), Constant.LATITUDE,
-                    Constant.LONGITUDE, FileUtils.getFile(this, uriImage)
+                    nameStore.toString(),
+                    nameOwner.toString(),
+                    address.toString(),
+                    Constant.LATITUDE,
+                    Constant.LONGITUDE,
+                    FileUtils.getFile(this, uriImage)
                 )
+                showMessage("Toko $nameStore berhasil ditambahkan.")
+                finish()
             }
 
         }
@@ -114,7 +113,7 @@ class AgentCreateActivity : AppCompatActivity(), AgentCreateContract.View {
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == pickImage && resultCode == Activity.RESULT_OK){
+        if (requestCode == pickImage && resultCode == Activity.RESULT_OK) {
             uriImage = data!!.data
             imgImageAgent.setImageURI(uriImage)
         }
@@ -123,5 +122,11 @@ class AgentCreateActivity : AppCompatActivity(), AgentCreateContract.View {
     override fun onSupportNavigateUp(): Boolean {
         finish()
         return super.onSupportNavigateUp()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Constant.LATITUDE = ""
+        Constant.LONGITUDE = ""
     }
 }

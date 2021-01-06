@@ -1,25 +1,23 @@
 package com.yoenas.tokoonline.ui.product
 
+import android.app.Activity
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
-import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.yoenas.tokoonline.R
 import com.yoenas.tokoonline.data.Constant
 import com.yoenas.tokoonline.data.model.product.DataProduct
 import com.yoenas.tokoonline.utils.GlideHelper
-import java.text.NumberFormat
 import java.util.*
 
 class ProductAdapter(
     val context: Context,
-    var product: ArrayList<DataProduct>,
-    val clickListener: (DataProduct, Int) -> Unit
+    var product: ArrayList<DataProduct>
 ) :
     RecyclerView.Adapter<ProductAdapter.ViewHolder>() {
 
@@ -37,7 +35,10 @@ class ProductAdapter(
         GlideHelper.setImage(context, product[position].gambar_produk!!, holder.imgProduct)
         holder.linearProduct.setOnClickListener{
             Constant.PRODUCT_ID = product[position].kd_produk!!
-            clickListener(product[position], position)
+            Constant.PRODUCT_ID = product[position].kd_produk!!
+            Constant.PRODUCT_NAME = product[position].nama_produk!!
+            Constant.IS_CHANGE = true
+            (context as Activity).finish()
         }
     }
 

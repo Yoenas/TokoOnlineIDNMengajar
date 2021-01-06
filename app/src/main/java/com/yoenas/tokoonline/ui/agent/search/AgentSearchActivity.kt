@@ -27,15 +27,15 @@ class AgentSearchActivity : AppCompatActivity(), AgentSearchContract.View {
 
         agentSearchPresenter = AgentSearchPresenter(this)
         agentSearchPresenter.getAgent()
-
-        rvSearchAgent = findViewById(R.id.rv_search_agent)
-        swipeSearch = findViewById(R.id.swipe_search)
-        edtSearch = findViewById(R.id.edt_search)
     }
 
     override fun initActivity() {
         supportActionBar!!.title = "Pilih Agen"
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        rvSearchAgent = findViewById(R.id.rv_search_agent)
+        swipeSearch = findViewById(R.id.swipe_search)
+        edtSearch = findViewById(R.id.edt_search)
     }
 
     override fun initListener() {

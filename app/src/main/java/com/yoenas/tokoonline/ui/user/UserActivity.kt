@@ -1,10 +1,10 @@
 package com.yoenas.tokoonline.ui.user
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.appbar.AppBarLayout
@@ -39,7 +39,6 @@ class UserActivity : AppCompatActivity(), UserContract.View {
 
     override fun initActivity() {
         supportActionBar?.hide()
-        initToolbar()
 
         btnBack = findViewById(R.id.btn_back)
         btnLogout = findViewById(R.id.btn_logout)
@@ -53,6 +52,8 @@ class UserActivity : AppCompatActivity(), UserContract.View {
         appBarUser = findViewById(R.id.app_bar_user)
         collapsingUser = findViewById(R.id.collapsing_user)
         toolbar = findViewById(R.id.toolbar_user)
+
+        initToolbar()
 
     }
 

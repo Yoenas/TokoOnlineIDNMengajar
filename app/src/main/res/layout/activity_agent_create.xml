@@ -28,6 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
             android:hint="Masukkan Nama Toko"
+            android:inputType="text"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_title_agent" />
@@ -37,6 +38,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
+            android:inputType="textPersonName"
             android:hint="Masukkan Nama Pemilik Toko"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_namestore_agent" />
@@ -47,6 +49,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:hint="Masukkan Alamat Lengkap Toko"
+            android:inputType="text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_name_owner_agent" />
 
@@ -57,6 +60,7 @@
             android:layout_marginTop="10dp"
             android:focusable="false"
             android:hint="Atur Lokasi"
+            android:inputType="text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_address_agent" />
 

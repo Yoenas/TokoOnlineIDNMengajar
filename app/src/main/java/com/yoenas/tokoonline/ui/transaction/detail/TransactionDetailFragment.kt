@@ -1,12 +1,12 @@
 package com.yoenas.tokoonline.ui.transaction.detail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -15,7 +15,7 @@ import com.yoenas.tokoonline.data.Constant
 import com.yoenas.tokoonline.data.model.transaction.detail.DataDetail
 import com.yoenas.tokoonline.data.model.transaction.detail.ResponseTransactionDetail
 
-class TransactionDetailFragment : Fragment(), TransactionDetailConract.View {
+class TransactionDetailFragment : Fragment(), TransactionDetailContract.View {
 
     lateinit var detailAdapter: TransactionDetailAdapter
     lateinit var presenter: TransactionDetailPresenter
@@ -30,13 +30,8 @@ class TransactionDetailFragment : Fragment(), TransactionDetailConract.View {
     ): View? {
         // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_transaction_detail, container, false)
-
         presenter = TransactionDetailPresenter(this)
         initListener(view)
-
-        swipeDetailTransaction = view.findViewById(R.id.swipe_detail_transaction)
-        tvInvoiceDetail = view.findViewById(R.id.tv_invoice_detail_transaction)
-        rvDetailTransaction = view.findViewById(R.id.rv_detail_transaction)
         return view
     }
 
@@ -46,12 +41,14 @@ class TransactionDetailFragment : Fragment(), TransactionDetailConract.View {
         presenter.getTransactionByInvoice(Constant.INVOICE)
     }
 
-    override fun initFragment() {
-        detailAdapter = TransactionDetailAdapter(context!!, arrayListOf())
-    }
-
     override fun initListener(view: View) {
+        swipeDetailTransaction = view.findViewById(R.id.swipe_detail_transaction)
+        tvInvoiceDetail = view.findViewById(R.id.tv_invoice_detail_transaction)
+        rvDetailTransaction = view.findViewById(R.id.rv_detail_transaction)
+
         tvInvoiceDetail.text = Constant.INVOICE
+
+        detailAdapter = TransactionDetailAdapter(context!!, arrayListOf())
         rvDetailTransaction.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = detailAdapter

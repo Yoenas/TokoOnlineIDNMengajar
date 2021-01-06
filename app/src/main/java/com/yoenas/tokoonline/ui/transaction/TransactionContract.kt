@@ -9,7 +9,6 @@ interface TransactionContract {
     }
 
     interface View{
-        fun initFragment()
         fun initListener(view: android.view.View)
         fun onLoadingTransaction(loading: Boolean)
         fun onResultTransaction(responseTransactionList: ResponseTransactionList)

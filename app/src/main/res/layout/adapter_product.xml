@@ -17,7 +17,7 @@
         android:padding="5dp"
         android:textColor="@color/black"
         android:textSize="16sp"
-        tools:text="Bakso Mana Lagi" />
+        android:text="@string/bakso_mana_lagi" />
 
     <com.infinityandroid.roundedimageview.RoundedImageView
         android:id="@+id/img_product"
@@ -31,7 +31,6 @@
         android:id="@+id/tv_price_product"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txvName"
         android:padding="5dp"
         android:textAlignment="center"
         android:textColor="@color/teal_200"

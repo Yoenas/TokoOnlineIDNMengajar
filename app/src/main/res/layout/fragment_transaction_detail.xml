@@ -20,7 +20,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="No Faktur" />
+                android:text="@string/no_faktur" />
 
             <TextView
                 android:id="@+id/tv_invoice_detail_transaction"
@@ -38,7 +38,7 @@
                 android:layout_height="1dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
-                android:background="#999999" />
+                android:background="@color/gray" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_detail_transaction"

@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Agen Baru"
+            android:text="@string/tv_agen_baru"
             android:textColor="@color/purple_700"
             android:textSize="32sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +27,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:hint="Masukkan Nama Toko"
+            android:hint="@string/masukkan_nama_toko"
             android:inputType="text"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
@@ -39,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:inputType="textPersonName"
-            android:hint="Masukkan Nama Pemilik Toko"
+            android:hint="@string/masukkan_nama_pemilik_toko"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_namestore_agent" />
 
@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:hint="Masukkan Alamat Lengkap Toko"
+            android:hint="@string/masukkan_alamat_lengkap_toko"
             android:inputType="text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_name_owner_agent" />
@@ -59,7 +59,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:focusable="false"
-            android:hint="Atur Lokasi"
+            android:hint="@string/atur_lokasi"
             android:inputType="text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/edt_address_agent" />
@@ -81,8 +81,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="25dp"
             android:background="@drawable/btn_corners_primary"
-            android:text="SIMPAN"
-            android:textAllCaps="false"
+            android:text="@string/simpan"
             android:textColor="@color/white"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/img_image_agent" />

@@ -39,10 +39,10 @@
             android:layout_below="@+id/tv_name_store_search"
             android:layout_marginTop="3dp"
             android:layout_toEndOf="@+id/img_agent_search"
-            android:drawableLeft="@drawable/ic_location"
-            android:drawableTint="@color/white"
             android:textColor="@color/white"
             android:textSize="12sp"
+            app:drawableLeftCompat="@drawable/ic_location"
+            app:drawableTint="@color/white"
             tools:text="Lokasi" />
 
     </RelativeLayout>

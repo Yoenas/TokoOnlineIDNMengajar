@@ -16,7 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="200.000"
+            android:text="@string/_200_000"
             android:textColor="@color/black"
             android:textSize="18sp"
             android:textStyle="bold"
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="5dp"
-            android:text="181019000001"
+            android:text="@string/_181019000001"
             app:layout_constraintTop_toBottomOf="@+id/tv_total_transaction" />
 
         <TextView
@@ -36,7 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="10dp"
-            android:text="18-October-2019"
+            android:text="@string/_18_october_2019"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_invoice_transaction" />
@@ -49,7 +49,7 @@
             android:layout_marginTop="5dp"
             android:background="@color/purple_500"
             android:padding="10dp"
-            android:text="Lihat detail"
+            android:text="@string/lihat_detail"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/tv_date_transaction" />
 

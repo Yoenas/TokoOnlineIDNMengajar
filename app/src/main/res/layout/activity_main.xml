@@ -16,7 +16,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/img_heading"
@@ -25,6 +25,7 @@
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img_pexels"
+                android:contentDescription="@string/header_image"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
@@ -33,7 +34,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="10dp"
-                android:text="Masuk sebagai"
+                android:text="@string/masuk_sebagai"
                 android:textColor="@color/white"
                 android:textSize="12sp"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -44,7 +45,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:drawablePadding="5dp"
-                android:text="Yoenas"
+                android:text="@string/yoenas"
                 android:textColor="@color/white"
                 app:drawableStartCompat="@drawable/ic_view_person"
                 app:layout_constraintTop_toBottomOf="@id/tv_login_as" />
@@ -55,7 +56,7 @@
                 android:layout_alignParentBottom="true"
                 android:background="@drawable/bg_text_heading"
                 android:padding="10dp"
-                android:text="Yuk, kita lakukan \nyang terbaik hari ini!"
+                android:text="@string/txt_header"
                 android:textColor="@color/white"
                 android:textSize="24sp"
                 android:textStyle="bold"
@@ -79,20 +80,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_card_transaction"
                         android:drawablePadding="10dp"
-                        android:drawableTint="@color/teal_200"
                         android:gravity="center"
-                        android:text="Transaksi"
+                        android:text="@string/transaksi"
                         android:textColor="@color/purple_500"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableStartCompat="@drawable/ic_card_transaction"
+                        app:drawableTint="@color/teal_200" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="34dp"
+                        android:paddingEnd="5dp"
                         android:paddingBottom="14dp"
-                        android:text="Histori Transaksi | Buat Transaksi Baru"
+                        android:text="@string/txt_riwayat_transaksi"
                         android:textColor="@color/purple_500"
                         android:textSize="12sp" />
 
@@ -118,20 +120,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_card_agent"
                         android:drawablePadding="10dp"
-                        android:drawableTint="@color/teal_200"
                         android:gravity="center"
-                        android:text="Agen"
+                        android:text="@string/agen"
                         android:textColor="@color/purple_500"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableStartCompat="@drawable/ic_card_agent"
+                        app:drawableTint="@color/teal_200" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="34dp"
+                        android:paddingEnd="5dp"
                         android:paddingBottom="14dp"
-                        android:text="Daftar Agen | Edit Agen | Tambah Agen Baru"
+                        android:text="@string/txt_agen"
                         android:textColor="@color/purple_500"
                         android:textSize="12sp" />
 
@@ -158,20 +161,21 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:drawableStart="@drawable/ic_card_user"
                         android:drawablePadding="10dp"
-                        android:drawableTint="@color/teal_200"
                         android:gravity="center"
-                        android:text="Profil"
+                        android:text="@string/profil"
                         android:textColor="@color/purple_500"
-                        android:textStyle="bold" />
+                        android:textStyle="bold"
+                        app:drawableStartCompat="@drawable/ic_card_user"
+                        app:drawableTint="@color/teal_200" />
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingStart="34dp"
+                        android:paddingEnd="5dp"
                         android:paddingBottom="14dp"
-                        android:text="Lihat Profil Saya"
+                        android:text="@string/txt_profil"
                         android:textColor="@color/purple_500"
                         android:textSize="12sp" />
 
@@ -188,7 +192,7 @@
         android:backgroundTint="@color/white"
         android:clickable="true"
         android:focusable="true"
-        android:text="Masuk"
+        android:text="@string/masuk"
         android:textColor="@color/purple_500"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@id/sv_main" />

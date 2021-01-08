@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
-            android:text="&#8942;"
+            android:text="@string/titik_tiga"
             android:textAppearance="?android:textAppearanceLarge"
             android:textColor="@color/purple_500"
             android:textStyle="bold"
@@ -43,7 +43,7 @@
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
             android:layout_toStartOf="@+id/tv_options"
-            android:text="Nama Toko"
+            android:text="@string/nama_toko"
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@id/tv_options"
@@ -54,12 +54,11 @@
             android:id="@+id/tv_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txvNameStore"
             android:layout_marginTop="5dp"
-            android:drawableLeft="@drawable/ic_location"
-            android:text="Lokasi"
+            android:text="@string/lokasi"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@id/tv_name_store"
+            app:drawableLeftCompat="@drawable/ic_location"
             app:layout_constraintTop_toBottomOf="@id/tv_name_store" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

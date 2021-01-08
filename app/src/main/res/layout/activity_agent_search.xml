@@ -20,7 +20,7 @@
             android:background="@android:color/transparent"
             android:drawableStart="@drawable/ic_search"
             android:drawablePadding="10dp"
-            android:hint="Cari Agen"
+            android:hint="@string/cari_agen"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1"

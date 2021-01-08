@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Masuk"
+            android:text="@string/masuk"
             android:textColor="@color/purple_700"
             android:textSize="32sp"
             app:layout_constraintTop_toTopOf="parent" />
@@ -27,11 +27,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
             android:background="@drawable/box_stroke_teal"
-            android:hint="Username"
+            android:hint="@string/username"
             android:inputType="text"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:textColor="@color/black"
+            android:importantForAutofill="no"
             app:layout_constraintTop_toBottomOf="@id/tv_masuk" />
 
         <EditText
@@ -40,11 +41,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:background="@drawable/box_stroke_teal"
-            android:hint="Password"
+            android:hint="@string/password"
             android:inputType="textPassword"
             android:paddingStart="10dp"
             android:paddingEnd="10dp"
             android:textColor="@color/black"
+            android:importantForAutofill="no"
             app:layout_constraintTop_toBottomOf="@id/edt_username" />
 
         <Button
@@ -53,7 +55,7 @@
             android:layout_height="40dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/btn_corners_primary"
-            android:text="Login"
+            android:text="@string/login"
             android:textColor="@color/white"
             app:layout_constraintTop_toBottomOf="@id/edt_password" />
 
@@ -69,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:text="Masuk untuk melakukan Transaksi. Menambahkan maupun perbarui Agen, dan lainnya."
+            android:text="@string/txt_login"
             android:textAlignment="center"
             android:textColor="@color/purple_500"
             app:layout_constraintTop_toBottomOf="@id/progress_login"

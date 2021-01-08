@@ -9,6 +9,7 @@
         android:layout_height="56dp"
         android:layout_alignParentEnd="true"
         android:padding="10dp"
+        android:contentDescription="@string/close_category"
         android:src="@drawable/ic_bar_close" />
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -29,7 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="Pilih Kategori"
+                android:text="@string/choose_category"
                 android:textColor="@color/purple_500"
                 android:textSize="22sp"
                 android:textStyle="normal" />

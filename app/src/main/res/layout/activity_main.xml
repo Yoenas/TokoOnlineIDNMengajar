@@ -76,7 +76,6 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
                     android:padding="10dp">
-
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -87,7 +86,6 @@
                         android:textStyle="bold"
                         app:drawableStartCompat="@drawable/ic_card_transaction"
                         app:drawableTint="@color/teal_200" />
-
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -97,7 +95,6 @@
                         android:text="@string/txt_riwayat_transaksi"
                         android:textColor="@color/purple_500"
                         android:textSize="12sp" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 

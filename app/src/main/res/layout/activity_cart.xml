@@ -30,6 +30,7 @@
                     android:text="@string/tambah_produk"
                     android:textColor="@color/white"
                     app:layout_constraintEnd_toStartOf="@+id/btn_reset"
+                    app:layout_constraintHorizontal_chainStyle="spread"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
@@ -53,7 +54,8 @@
                         android:id="@+id/rv_cart"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:nestedScrollingEnabled="false" />
+                        android:nestedScrollingEnabled="false"
+                        tools:listitem="@layout/adapter_cart" />
                 </LinearLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </ScrollView>

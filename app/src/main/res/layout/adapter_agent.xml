@@ -58,6 +58,7 @@
             android:layout_marginTop="5dp"
             android:text="@string/lokasi"
             android:textSize="12sp"
+            android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="@id/tv_name_store"
             app:drawableLeftCompat="@drawable/ic_location"
             app:layout_constraintTop_toBottomOf="@id/tv_name_store" />
